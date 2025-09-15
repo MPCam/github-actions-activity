@@ -2,16 +2,15 @@ name: Run learning activity
 on: [push, pull_request]
 jobs:
   test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Checkout repository code
+        uses: actions/checkout@v4
 
       - name: Set up python
         uses: actions/setup-python@v3
         with:
           python-version: '3.9'
 
-
-      - name: Run file
-        run: learning_activity.py
+      - name: Execute Python file
+        run: python learning_activity.py
